@@ -9,6 +9,7 @@ using System.Windows.Forms;
 
 namespace TAsk1_v._2
 {
+    [Serializable]
     class Map
     {
        
@@ -43,6 +44,8 @@ namespace TAsk1_v._2
         public int MinHeight_Y1 { get => MinHeight_Y; set => MinHeight_Y = value; }
         public int MaxHeight_Y1 { get => MaxHeight_Y; set => MaxHeight_Y = value; }
         public int MinWidth_X1 { get => MinWidth_X; set => MinWidth_X = value; }
+        internal Item[,] Itemarray { get => itemarray; set => itemarray = value; }
+        internal Enemey[,] EnemeyArray { get => enemeyArray; set => enemeyArray = value; }
 
         public void populateArray()
         {

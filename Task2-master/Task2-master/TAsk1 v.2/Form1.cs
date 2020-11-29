@@ -4,7 +4,9 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -58,6 +60,7 @@ namespace TAsk1_v._2
                         ;
                         mageAttack();
                         getitem();
+                        moveenemeies();
                        
                     }
                     break;
@@ -77,6 +80,7 @@ namespace TAsk1_v._2
                         ;
                         mageAttack();
                         getitem();
+                        moveenemeies();
                     }
                         
                     break;
@@ -96,6 +100,7 @@ namespace TAsk1_v._2
                         ;
                         mageAttack();
                         getitem();
+                        moveenemeies();
                     }
                        
                     break;
@@ -115,6 +120,7 @@ namespace TAsk1_v._2
                         ;
                         mageAttack();
                         getitem();
+                        moveenemeies();
                     }
 
                         
@@ -129,6 +135,86 @@ namespace TAsk1_v._2
             
         }
 
+        private void moveenemeies()
+        {
+            for(int i = 0; i< Map.MaxWidth_X1 -2; i++)
+            {
+                for (int o = 0; o< Map.MaxHeight_Y1 - 2; o++)
+                {
+                    if(Map.enemeyArray[i,o] != null && Map.enemeyArray[i, o].Symbol == " G")
+                    {
+                        Movethisenemey(i, o);
+
+                    }
+                }
+            }
+        }
+
+        private void Movethisenemey(int x, int y)
+        {
+            Random random = new Random();
+            int i = random.Next(0, 4);
+
+            switch (i)
+            {
+                case 0:
+                    if(Map.enemeyArray[x-1,y] == null && x-1 <= Map.MaxWidth_X1 )
+                    {
+                        Map.enemeyArray[x, y].Move(Charchter.Movement.Down );
+                        Map.enemeyArray[x - 1, y] = Map.enemeyArray[x, y];
+                        Map.enemeyArray[x, y] = null;
+
+                    }
+                    else
+                    {
+                        
+                    }
+                    
+                    break;
+                case 1:
+                    if (Map.enemeyArray[x, y-1] == null && y-1 <= Map.MaxHeight_Y1)
+                    {
+                        Map.enemeyArray[x, y].Move(Charchter.Movement.Left);
+                        Map.enemeyArray[x , y-1] = Map.enemeyArray[x, y];
+                        Map.enemeyArray[x, y] = null;
+                    }
+                    else
+                    {
+                        
+                    }
+                       
+                    break;
+                case 2:
+                    if (Map.enemeyArray[x, y+1] == null && y+1 >= Map.MinHeight_Y1 )
+                    {
+                        Map.enemeyArray[x, y].Move(Charchter.Movement.Right);
+                        Map.enemeyArray[x , y+1] = Map.enemeyArray[x, y];
+                        Map.enemeyArray[x, y] = null;
+                    }
+                    else
+                    {
+                        
+                    }
+                    break;
+                case 3:
+                    if (Map.enemeyArray[x+1, y] == null && x+1 >= Map.MinWidth_X1)
+                    {
+                        Map.enemeyArray[x, y].Move(Charchter.Movement.Up);
+                        Map.enemeyArray[x + 1, y] = Map.enemeyArray[x, y];
+                        Map.enemeyArray[x, y] = null;
+                    }
+                    else
+                    {
+                        
+                    }
+                        
+                    break;
+                case 4:
+                    Map.enemeyArray[x, y].Move(Charchter.Movement.No_Movement);
+                    break;
+            }
+        }
+
         private void getitem()
         {
             if (Map.GetItemAtPostion(Map.Hero.X_coordinate, Map.Hero.Y_coordinate) != null)
@@ -140,11 +226,11 @@ namespace TAsk1_v._2
 
         private void mageAttack()
         {
-            for (int i = 0; i < Map.MaxWidth_X1; i++)
+            for (int i = 0; i < Map.MaxWidth_X1-1; i++)
             {
-                for (int o = 0; o < Map.MaxHeight_Y1; o++)
+                for (int o = 0; o < Map.MaxHeight_Y1-1; o++)
                 {
-                    if(Map.enemeyArray[i,o] != null && Map.enemeyArray[i,o].Symbol == "M")
+                    if(Map.enemeyArray[i,o] != null && Map.enemeyArray[i,o].Symbol == " M")
                     {
                         //attacking anything above this object
                        if(i + 1 == Map.Hero.X_coordinate && o == Map.Hero.Y_coordinate)
@@ -348,6 +434,26 @@ namespace TAsk1_v._2
             }
             
 
+        }
+
+        private void Save_button_Click(object sender, EventArgs e)
+        {
+            FileStream outputfile = new FileStream("rougelitesave.dat", FileMode.Create, FileAccess.Write);
+            BinaryFormatter binaryFormatter = new BinaryFormatter();
+            binaryFormatter.Serialize(outputfile,Map);
+            
+            outputfile.Close();
+        }
+
+        private void Load_button_Click(object sender, EventArgs e)
+        {
+            FileStream inputfile = new FileStream("rougelitesave.dat", FileMode.Open, FileAccess.Read);
+            BinaryFormatter binaryFormatter = new BinaryFormatter();
+            Map mapfromfile = (Map)binaryFormatter.Deserialize(inputfile); 
+            inputfile.Close();
+
+
+            Map = mapfromfile;
         }
     }
 }

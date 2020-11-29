@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace TAsk1_v._2
 {
+    [Serializable]
     class Hero : Charchter
     {
         public Hero(int x_coordinate, int y_coordinate, int hp, int damage ) : base(x_coordinate, y_coordinate, damage)

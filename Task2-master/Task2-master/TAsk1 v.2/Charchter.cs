@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace TAsk1_v._2
 {
+    [Serializable]
     abstract class Charchter : Tile
     {
         private Map map;
@@ -118,6 +119,8 @@ namespace TAsk1_v._2
                     break;
                 case Movement.Right:
                     this.Y_coordinate++;
+                    break;
+                case Movement.No_Movement:
                     break;
             }
 

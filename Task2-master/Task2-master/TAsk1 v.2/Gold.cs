@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace TAsk1_v._2
 {
+    [Serializable]
     class Gold : Item
     {
         private Random random = new Random();

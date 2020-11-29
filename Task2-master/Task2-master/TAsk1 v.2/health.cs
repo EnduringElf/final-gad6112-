@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace TAsk1_v._2
 {
+    [Serializable]
     class Health : Item
     {
         Random random = new Random();

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace TAsk1_v._2
 {
+    [Serializable]
     class GamEngine
     {
         private Map map;

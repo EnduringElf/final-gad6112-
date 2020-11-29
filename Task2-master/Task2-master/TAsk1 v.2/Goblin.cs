@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace TAsk1_v._2
 {
+    [Serializable]
     class Goblin : Enemey
     {
         public Goblin(int x_coordinate, int y_coordinate) : base(x_coordinate, y_coordinate, 1, " G", 10)

@@ -33,6 +33,8 @@
             this.Keypress = new System.Windows.Forms.Label();
             this.Enemeys_textbox = new System.Windows.Forms.RichTextBox();
             this.Attack_button = new System.Windows.Forms.Button();
+            this.Save_button = new System.Windows.Forms.Button();
+            this.Load_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Map_label
@@ -85,12 +87,34 @@
             this.Attack_button.UseVisualStyleBackColor = true;
             this.Attack_button.Click += new System.EventHandler(this.Attack_button_Click);
             // 
+            // Save_button
+            // 
+            this.Save_button.Location = new System.Drawing.Point(72, 403);
+            this.Save_button.Name = "Save_button";
+            this.Save_button.Size = new System.Drawing.Size(45, 23);
+            this.Save_button.TabIndex = 5;
+            this.Save_button.Text = "Save";
+            this.Save_button.UseVisualStyleBackColor = true;
+            this.Save_button.Click += new System.EventHandler(this.Save_button_Click);
+            // 
+            // Load_button
+            // 
+            this.Load_button.Location = new System.Drawing.Point(124, 401);
+            this.Load_button.Name = "Load_button";
+            this.Load_button.Size = new System.Drawing.Size(41, 23);
+            this.Load_button.TabIndex = 6;
+            this.Load_button.Text = "Load";
+            this.Load_button.UseVisualStyleBackColor = true;
+            this.Load_button.Click += new System.EventHandler(this.Load_button_Click);
+            // 
             // Hero_label
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1046, 450);
+            this.Controls.Add(this.Load_button);
+            this.Controls.Add(this.Save_button);
             this.Controls.Add(this.Attack_button);
             this.Controls.Add(this.Enemeys_textbox);
             this.Controls.Add(this.Keypress);
@@ -110,6 +134,8 @@
         private System.Windows.Forms.Label Keypress;
         private System.Windows.Forms.RichTextBox Enemeys_textbox;
         private System.Windows.Forms.Button Attack_button;
+        private System.Windows.Forms.Button Save_button;
+        private System.Windows.Forms.Button Load_button;
     }
 }
 
