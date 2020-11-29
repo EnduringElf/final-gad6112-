@@ -41,7 +41,7 @@
             // 
             this.Map_label.AutoSize = true;
             this.Map_label.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Map_label.Location = new System.Drawing.Point(215, 9);
+            this.Map_label.Location = new System.Drawing.Point(268, 9);
             this.Map_label.Name = "Map_label";
             this.Map_label.Size = new System.Drawing.Size(68, 18);
             this.Map_label.TabIndex = 0;
@@ -61,7 +61,7 @@
             // Keypress
             // 
             this.Keypress.AutoSize = true;
-            this.Keypress.Location = new System.Drawing.Point(12, 428);
+            this.Keypress.Location = new System.Drawing.Point(7, 507);
             this.Keypress.Name = "Keypress";
             this.Keypress.Size = new System.Drawing.Size(35, 13);
             this.Keypress.TabIndex = 2;
@@ -69,17 +69,17 @@
             // 
             // Enemeys_textbox
             // 
-            this.Enemeys_textbox.Location = new System.Drawing.Point(12, 229);
+            this.Enemeys_textbox.Location = new System.Drawing.Point(12, 214);
             this.Enemeys_textbox.Name = "Enemeys_textbox";
             this.Enemeys_textbox.ReadOnly = true;
-            this.Enemeys_textbox.Size = new System.Drawing.Size(153, 167);
+            this.Enemeys_textbox.Size = new System.Drawing.Size(220, 261);
             this.Enemeys_textbox.TabIndex = 3;
             this.Enemeys_textbox.Text = "";
             this.Enemeys_textbox.TextChanged += new System.EventHandler(this.Enemeys_textbox_TextChanged);
             // 
             // Attack_button
             // 
-            this.Attack_button.Location = new System.Drawing.Point(15, 402);
+            this.Attack_button.Location = new System.Drawing.Point(10, 481);
             this.Attack_button.Name = "Attack_button";
             this.Attack_button.Size = new System.Drawing.Size(50, 23);
             this.Attack_button.TabIndex = 4;
@@ -89,7 +89,7 @@
             // 
             // Save_button
             // 
-            this.Save_button.Location = new System.Drawing.Point(72, 403);
+            this.Save_button.Location = new System.Drawing.Point(66, 481);
             this.Save_button.Name = "Save_button";
             this.Save_button.Size = new System.Drawing.Size(45, 23);
             this.Save_button.TabIndex = 5;
@@ -99,7 +99,7 @@
             // 
             // Load_button
             // 
-            this.Load_button.Location = new System.Drawing.Point(124, 401);
+            this.Load_button.Location = new System.Drawing.Point(117, 481);
             this.Load_button.Name = "Load_button";
             this.Load_button.Size = new System.Drawing.Size(41, 23);
             this.Load_button.TabIndex = 6;
@@ -112,7 +112,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1046, 450);
+            this.ClientSize = new System.Drawing.Size(1344, 528);
             this.Controls.Add(this.Load_button);
             this.Controls.Add(this.Save_button);
             this.Controls.Add(this.Attack_button);
