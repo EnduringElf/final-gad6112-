@@ -15,7 +15,7 @@ namespace TAsk1_v._2
         
         public Gold(int X_coordinate, int Y_coordinate) : base(X_coordinate, Y_coordinate)
         {
-            this.Goldworth = random.Next(0,5);
+            this.Goldworth = random.Next(0,6);
             
         }
 
