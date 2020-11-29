@@ -27,7 +27,7 @@ namespace TAsk1_v._2
         {
             return base.ChcekRAnge(target);
         }
-        public override Movement Returnmove(Movement move = Movement.No_Movement)
+        public override Movement Returnmove(Movement move = 0)
         {
             throw new NotImplementedException();
         }

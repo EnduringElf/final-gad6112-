@@ -58,7 +58,7 @@ namespace TAsk1_v._2
                             Attack_button.Enabled = true;
                         }
                         ;
-                        mageAttack();
+                        enemyattack();
                         getitem();
                         moveenemeies();
                        
@@ -78,7 +78,7 @@ namespace TAsk1_v._2
                             Attack_button.Enabled = true;
                         }
                         ;
-                        mageAttack();
+                        enemyattack();
                         getitem();
                         moveenemeies();
                     }
@@ -98,7 +98,7 @@ namespace TAsk1_v._2
                             Attack_button.Enabled = true;
                         }
                         ;
-                        mageAttack();
+                        enemyattack();
                         getitem();
                         moveenemeies();
                     }
@@ -118,7 +118,7 @@ namespace TAsk1_v._2
                             Attack_button.Enabled = true;
                         }
                         ;
-                        mageAttack();
+                        enemyattack();
                         getitem();
                         moveenemeies();
                     }
@@ -224,12 +224,13 @@ namespace TAsk1_v._2
             }
         }
 
-        private void mageAttack()
+        private void enemyattack()
         {
             for (int i = 0; i < Map.MaxWidth_X1-1; i++)
             {
                 for (int o = 0; o < Map.MaxHeight_Y1-1; o++)
                 {
+                    //only mage attack
                     if(Map.enemeyArray[i,o] != null && Map.enemeyArray[i,o].Symbol == " M")
                     {
                         //attacking anything above this object
@@ -305,6 +306,49 @@ namespace TAsk1_v._2
                         if (Map.enemeyArray[i - 1, o + 1] != null)
                         {
                             Map.enemeyArray[i, o].Attack(Map.enemeyArray[i - 1, o - 1]);
+                        }
+                    }
+                    if(Map.enemeyArray[i,o] != null && Map.enemeyArray[i,o].Symbol == " G")
+                    {
+                        //attacking anything above this object
+                        if (i + 1 == Map.Hero.X_coordinate && o == Map.Hero.Y_coordinate)
+                        {
+                            Map.enemeyArray[i, o].Attack(Map.Hero);
+                        }
+                        //attacking anything below this object
+                        if (i - 1 == Map.Hero.X_coordinate && o == Map.Hero.Y_coordinate)
+                        {
+                            Map.enemeyArray[i, o].Attack(Map.Hero);
+                        }
+                        //attacking anything to the right this object
+                        if (i == Map.Hero.X_coordinate && o + 1 == Map.Hero.Y_coordinate)
+                        {
+                            Map.enemeyArray[i, o].Attack(Map.Hero);
+                        }
+                        //attacking anything to the left this object
+                        if (i == Map.Hero.X_coordinate && o - 1 == Map.Hero.Y_coordinate)
+                        {
+                            Map.enemeyArray[i, o].Attack(Map.Hero);
+                        }
+                        //above and to the right
+                        if (i + 1 == Map.Hero.X_coordinate && o + 1 == Map.Hero.Y_coordinate)
+                        {
+                            Map.enemeyArray[i, o].Attack(Map.Hero);
+                        }
+                        //above and to the left
+                        if (i + 1 == Map.Hero.X_coordinate && o - 1 == Map.Hero.Y_coordinate)
+                        {
+                            Map.enemeyArray[i, o].Attack(Map.Hero);
+                        }
+                        //below and to the left
+                        if (i - 1 == Map.Hero.X_coordinate && o + 1 == Map.Hero.Y_coordinate)
+                        {
+                            Map.enemeyArray[i, o].Attack(Map.Hero);
+                        }
+                        //below and to the right
+                        if (i - 1 == Map.Hero.X_coordinate && o + 1 == Map.Hero.Y_coordinate)
+                        {
+                            Map.enemeyArray[i, o].Attack(Map.Hero);
                         }
                     }
                 }
