@@ -16,7 +16,7 @@ namespace TAsk1_v._2
             hP = hp;
             MaxHP = hp;
             Damage = damage;
-
+            this.gold = 0;
         }
 
         public override Movement Returnmove(Movement move = Movement.No_Movement)

@@ -14,7 +14,7 @@ namespace TAsk1_v._2
             Y_coordinate = y_coordinate;
             this.HP = 20;
             this.Damage = 2;
-            
+            this.gold = 2;
 
 
         }

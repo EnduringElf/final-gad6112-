@@ -21,7 +21,7 @@ namespace TAsk1_v._2
             this.HP = 5;
             this.rndX = x_coordinate;
             this.rndY = y_coordinate;
-
+            this.gold = 3;
         }
         public override bool ChcekRAnge(Charchter target)
         {

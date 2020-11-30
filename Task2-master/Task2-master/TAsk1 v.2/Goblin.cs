@@ -14,6 +14,10 @@ namespace TAsk1_v._2
             X_coordinate = x_coordinate;
             Y_coordinate = y_coordinate;
             this.HP = 10;
+            Weapon = new Melee_weapon(X_coordinate, Y_coordinate, 'D', Melee_weapon.Type.Dagger);
+            this.Damage = Weapon.Damage;
+            this.range = Weapon.Range;
+            this.gold = 1;
         }
 
         public override Movement Returnmove(Movement move = Movement.No_Movement)
