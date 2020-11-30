@@ -19,7 +19,7 @@ namespace TAsk1_v._2
 
         public enum TileType
         {
-            HERO, ENEMY, GOLD, WEAPON,
+            HERO, ENEMY, GOLD, WEAPON, SHOP
         }
 
         public Tile(int x_coordinate, int y_coordinate)

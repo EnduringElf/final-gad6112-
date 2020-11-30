@@ -17,6 +17,7 @@ namespace TAsk1_v._2
             this.map = Map ;
             
         }
+        
    
         
 

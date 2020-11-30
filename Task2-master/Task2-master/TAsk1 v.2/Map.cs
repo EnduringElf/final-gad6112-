@@ -64,6 +64,7 @@ namespace TAsk1_v._2
             
 
             create(Tile.TileType.HERO);
+            create(Tile.TileType.SHOP);
             for (int i = 0; i <= RandomNumber(1,enemycount ); i++)
             {
                 create(Tile.TileType.ENEMY);
@@ -281,6 +282,22 @@ namespace TAsk1_v._2
                 return itemarray[rndX, rndY] = new Gold(rndX, rndY);
 
 
+            }else if (type == Tile.TileType.SHOP)
+            {
+                while ((mapArray[rndX,rndY] == null) && (enemeyArray[rndX,rndY] == null) && (itemarray[rndX,rndY] == null))
+                {
+                    while (rndX > MaxWidth_X1 && rndX != hero.X_coordinate)
+                    {
+                        rndX = RandomNumber(MinWidth_X1, MaxWidth_X1);
+                    }
+                    while (rndY > MaxHeight_Y1 && rndY != hero.Y_coordinate)
+                    {
+                        rndY = RandomNumber(MinHeight_Y1, MaxHeight_Y1);
+                    }
+                    return mapArray[rndX, rndY] = new Shop(rndX, rndY);
+                }
+                
+                
             }
             
             return null;
