@@ -9,6 +9,7 @@ namespace TAsk1_v._2
     [Serializable]
     class Ranged_weapon : weapon
     {
+        public Type type;
         public enum Type 
         {
             Rifle, Longbow
@@ -22,7 +23,7 @@ namespace TAsk1_v._2
                 Damage = 5;
                 Cost = 7;
                 Range = 3;
-                Discription = "\n"+weapon_type + " \n durability:" + Durability + "\n Damge:" + Damage + "\n price:" + Cost + "\n range" + Range;
+                
             }
             else if (weapon_type == Type.Longbow)
             {
@@ -31,7 +32,7 @@ namespace TAsk1_v._2
                 Damage = 4;
                 Cost = 6;
                 Range = 2;
-                Discription = "\n"+ weapon_type + " \n durability:" + Durability + "\n Damge:" + Damage + "\n price:" + Cost + "\n range" + Range;
+                
             }
 
 
@@ -40,7 +41,14 @@ namespace TAsk1_v._2
 
         public override string ToString()
         {
-            return "RW";
+           if (type == Type.Longbow)
+           {
+                return "\n" + type + " \n durability:" + Durability + "\n Damge:" + Damage + "\n price:" + Cost + "\n range" + Range;
+            }
+           else
+           {
+                return "\n" + type + " \n durability:" + Durability + "\n Damge:" + Damage + "\n price:" + Cost + "\n range" + Range;
+            }
         }
 
 

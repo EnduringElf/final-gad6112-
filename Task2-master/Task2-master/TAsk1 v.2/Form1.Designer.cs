@@ -37,6 +37,7 @@
             this.Load_button = new System.Windows.Forms.Button();
             this.shopinventory = new System.Windows.Forms.ComboBox();
             this.debugbox = new System.Windows.Forms.RichTextBox();
+            this.Buy_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Map_label
@@ -130,12 +131,23 @@
             this.debugbox.TabIndex = 8;
             this.debugbox.Text = "";
             // 
+            // Buy_button
+            // 
+            this.Buy_button.Location = new System.Drawing.Point(1167, 138);
+            this.Buy_button.Name = "Buy_button";
+            this.Buy_button.Size = new System.Drawing.Size(94, 33);
+            this.Buy_button.TabIndex = 9;
+            this.Buy_button.Text = "Buy!";
+            this.Buy_button.UseVisualStyleBackColor = true;
+            this.Buy_button.Click += new System.EventHandler(this.Buy_button_Click);
+            // 
             // Hero_label
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1562, 563);
+            this.Controls.Add(this.Buy_button);
             this.Controls.Add(this.debugbox);
             this.Controls.Add(this.shopinventory);
             this.Controls.Add(this.Load_button);
@@ -163,6 +175,7 @@
         private System.Windows.Forms.Button Load_button;
         private System.Windows.Forms.ComboBox shopinventory;
         private System.Windows.Forms.RichTextBox debugbox;
+        private System.Windows.Forms.Button Buy_button;
     }
 }
 

@@ -167,7 +167,15 @@ namespace TAsk1_v._2
 
                 }
             }
-
+            if (hero.weapon != null)
+            {
+                hero.current_weapon = hero.weapon.Weapon_type;
+                hero.current_range = hero.weapon.Range;
+                hero.current_damage = hero.weapon.Damage;
+                hero.Damage = hero.current_damage;
+                
+            }
+            
             
 
         }

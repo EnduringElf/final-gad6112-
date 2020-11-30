@@ -8,13 +8,14 @@ namespace TAsk1_v._2
 {
     class Melee_weapon : weapon
     {
-
+        public Type type;
         public enum Type
         {
             Dagger, Longsword
         }
         public Melee_weapon(int X_coordinate, int Y_coordinate, char Symbol, Type weapon_type) : base(X_coordinate, Y_coordinate, Symbol)
         {
+            type = weapon_type;
             if (weapon_type == Type.Dagger)
             {
                 Weapon_type = "Dagger";
@@ -22,7 +23,7 @@ namespace TAsk1_v._2
                 Damage = 3;
                 Cost = 3;
                 Range = 1;
-                Discription = "\n" +weapon_type +" \n durability:" + Durability + "\n Damge:" + Damage + "\n price:" + Cost + "\n range" + Range;
+                
             }else if (weapon_type == Type.Longsword)
             {
                 Weapon_type = "Longsword";
@@ -30,7 +31,7 @@ namespace TAsk1_v._2
                 Damage = 4;
                 Cost = 5;
                 Range = 1;
-                Discription = "\n"+weapon_type+" \n durability:" + Durability + "\n Damge:" + Damage + "\n price:" + Cost + "\n range" + Range;
+                
             }
             
 
@@ -39,7 +40,14 @@ namespace TAsk1_v._2
         
         public override string ToString()
         {
-            return "MW";
+            if(type == Type.Dagger)
+            {
+                return "\n" + type + " \n durability:" + Durability + "\n Damge:" + Damage + "\n price:" + Cost + "\n range" + Range;
+            }
+            else
+            {
+                return "\n" + type + " \n durability:" + Durability + "\n Damge:" + Damage + "\n price:" + Cost + "\n range" + Range;
+            }
         }
 
     }

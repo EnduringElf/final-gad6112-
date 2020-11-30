@@ -21,6 +21,7 @@ namespace TAsk1_v._2
         public int currentenemyX;
         public int currentenemyY;
         Tile[,] Maparray;
+        public int shopitemselected;
 
         Map Map = new Map(0,20,0,20);
         public Hero_label()
@@ -32,10 +33,13 @@ namespace TAsk1_v._2
             GamEngine GM = new GamEngine(Map);
             Maparray = Map.maparray;
             Map.drawmap(Map_label,LAbel_hero);
-            shopinventory.Items.Add(Map.shop.Weaponarray[0].Discription);
-            shopinventory.Items.Add(Map.shop.Weaponarray[1].Discription);
-            shopinventory.Items.Add(Map.shop.Weaponarray[2].Discription);
+            shopinventory.Items.Add(Map.shop.Weaponarray[0].ToString());
+            shopinventory.Items.Add(Map.shop.Weaponarray[1].ToString());
+            shopinventory.Items.Add(Map.shop.Weaponarray[2].ToString());
             Map.shop.Buyer = Map.Hero;
+            Buy_button.Enabled = false;
+            Map.Hero.weapon = new Melee_weapon(Map.Hero.X_coordinate, Map.Hero.Y_coordinate, 'S', Melee_weapon.Type.Longsword);
+            
             
 
 
@@ -63,7 +67,7 @@ namespace TAsk1_v._2
                         enemyattack();
                         getitem();
                         moveenemeies();
-                        showshopitemselected();
+                        
                        
                     }
                     break;
@@ -84,7 +88,7 @@ namespace TAsk1_v._2
                         enemyattack();
                         getitem();
                         moveenemeies();
-                        showshopitemselected();
+                        
                     }
                         
                     break;
@@ -105,7 +109,7 @@ namespace TAsk1_v._2
                         enemyattack();
                         getitem();
                         moveenemeies();
-                        showshopitemselected();
+                        
                     }
                        
                     break;
@@ -126,7 +130,7 @@ namespace TAsk1_v._2
                         enemyattack();
                         getitem();
                         moveenemeies();
-                        showshopitemselected();
+                       
                     }
 
                         
@@ -134,18 +138,27 @@ namespace TAsk1_v._2
             }
 
             Map.drawmap(Map_label , LAbel_hero);
-            
+
+            showshopitemselected();
 
 
-            
-            
+
+
         }
 
         private void showshopitemselected()
         {
-            if (shopinventory.SelectedItem.ToString() != null)
+            if (shopinventory.SelectedItem != null)
             {
                 debugbox.Text = shopinventory.SelectedItem.ToString();
+                
+            }
+            if(shopinventory.SelectedIndex == 0)
+            {
+                if (Map.Hero.Gold >= Map.shop.Weaponarray[0].Cost)
+                {
+                    Buy_button.Enabled = true;
+                }
             }
             
         }
@@ -571,6 +584,11 @@ namespace TAsk1_v._2
         {
             
             
+
+        }
+
+        private void Buy_button_Click(object sender, EventArgs e)
+        {
 
         }
     }

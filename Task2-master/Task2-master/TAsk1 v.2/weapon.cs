@@ -16,7 +16,7 @@ namespace TAsk1_v._2
         private int cost;
         private string weapon_type;
         private Char symbol;
-        private string discription;
+        
         public weapon(int X_coordinate, int Y_coordinate, char Symbol) : base(X_coordinate, Y_coordinate)
         {
             symbol = Symbol;
@@ -28,6 +28,6 @@ namespace TAsk1_v._2
         public int Cost { get => cost; set => cost = value; }
         public string Weapon_type { get => weapon_type; set => weapon_type = value; }
         public int Range { get => range; set => range = value; }
-        public string Discription { get => discription; set => discription = value; }
+        
     }
 }
