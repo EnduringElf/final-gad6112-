@@ -143,76 +143,127 @@ namespace TAsk1_v._2
                 {
                     if(Map.enemeyArray[i,o] != null && Map.enemeyArray[i, o].Symbol == " G")
                     {
-                        Movethisenemey(i, o);
+                        Movethisenemey(i, o, 'G');
 
+                    }else if (Map.enemeyArray[i,o] != null && Map.enemeyArray[i,o].Symbol ==" L")
+                    {
+                        Movethisenemey(i, o, 'L');
                     }
                 }
             }
         }
 
-        private void Movethisenemey(int x, int y)
+        private void Movethisenemey(int x, int y, char enemy)
         {
             Random random = new Random();
             int i = random.Next(0, 4);
-
-            switch (i)
+            if (enemy == 'G')
             {
-                case 0:
-                    if(Map.enemeyArray[x-1,y] == null && x-1 <= Map.MaxWidth_X1 )
-                    {
-                        Map.enemeyArray[x, y].Move(Charchter.Movement.Down );
-                        Map.enemeyArray[x - 1, y] = Map.enemeyArray[x, y];
-                        Map.enemeyArray[x, y] = null;
+                switch (i)
+                {
+                    case 0:
 
-                    }
-                    else
-                    {
-                        
-                    }
-                    
-                    break;
-                case 1:
-                    if (Map.enemeyArray[x, y-1] == null && y-1 <= Map.MaxHeight_Y1)
-                    {
-                        Map.enemeyArray[x, y].Move(Charchter.Movement.Left);
-                        Map.enemeyArray[x , y-1] = Map.enemeyArray[x, y];
-                        Map.enemeyArray[x, y] = null;
-                    }
-                    else
-                    {
-                        
-                    }
-                       
-                    break;
-                case 2:
-                    if (Map.enemeyArray[x, y+1] == null && y+1 >= Map.MinHeight_Y1 )
-                    {
-                        Map.enemeyArray[x, y].Move(Charchter.Movement.Right);
-                        Map.enemeyArray[x , y+1] = Map.enemeyArray[x, y];
-                        Map.enemeyArray[x, y] = null;
-                    }
-                    else
-                    {
-                        
-                    }
-                    break;
-                case 3:
-                    if (Map.enemeyArray[x+1, y] == null && x+1 >= Map.MinWidth_X1)
+                        if (Map.enemeyArray[x - 1, y] == null && x - 1 <= Map.MaxWidth_X1)
+                        {
+                            Map.enemeyArray[x, y].Move(Charchter.Movement.Down);
+                            Map.enemeyArray[x - 1, y] = Map.enemeyArray[x, y];
+                            Map.enemeyArray[x, y] = null;
+
+                        }
+                        else
+                        {
+
+                        }
+
+                        break;
+                    case 1:
+                        if (Map.enemeyArray[x, y - 1] == null && y - 1 <= Map.MaxHeight_Y1)
+                        {
+                            
+                            Map.enemeyArray[x, y].Move(Charchter.Movement.Left);
+                            Map.enemeyArray[x, y - 1] = Map.enemeyArray[x, y];
+                            Map.enemeyArray[x, y] = null;
+                        }
+                        else
+                        {
+
+                        }
+
+                        break;
+                    case 2:
+                        if (Map.enemeyArray[x, y + 1] == null && y + 1 >= Map.MinHeight_Y1)
+                        {
+                            Map.enemeyArray[x, y].Move(Charchter.Movement.Right);
+                            Map.enemeyArray[x, y + 1] = Map.enemeyArray[x, y];
+                            Map.enemeyArray[x, y] = null;
+                        }
+                        else
+                        {
+
+                        }
+                        break;
+                    case 3:
+                        if (Map.enemeyArray[x + 1, y] == null && x + 1 >= Map.MinWidth_X1)
+                        {
+                            Map.enemeyArray[x, y].Move(Charchter.Movement.Up);
+                            Map.enemeyArray[x + 1, y] = Map.enemeyArray[x, y];
+                            Map.enemeyArray[x, y] = null;
+                        }
+                        else
+                        {
+
+                        }
+
+                        break;
+                    case 4:
+                        Map.enemeyArray[x, y].Move(Charchter.Movement.No_Movement);
+                        break;
+                }
+            }else if (enemy == 'L')
+            {
+                if(x < Map.Hero.X_coordinate && x+1 >= Map.MinWidth_X1)
+                {
+                    if(Map.enemeyArray[x,y] != null)
                     {
                         Map.enemeyArray[x, y].Move(Charchter.Movement.Up);
                         Map.enemeyArray[x + 1, y] = Map.enemeyArray[x, y];
                         Map.enemeyArray[x, y] = null;
                     }
-                    else
+                    
+                }
+                if (x > Map.Hero.X_coordinate)
+                {
+                    if (Map.enemeyArray[x, y] != null)
                     {
-                        
+                        Map.enemeyArray[x, y].Move(Charchter.Movement.Down);
+                        Map.enemeyArray[x - 1, y] = Map.enemeyArray[x, y];
+                        Map.enemeyArray[x, y] = null;
                     }
-                        
-                    break;
-                case 4:
-                    Map.enemeyArray[x, y].Move(Charchter.Movement.No_Movement);
-                    break;
+                     
+                }
+                if (y > Map.Hero.Y_coordinate)
+                {
+                    if (Map.enemeyArray[x, y] != null)
+                    {
+                        Map.enemeyArray[x, y].Move(Charchter.Movement.Left);
+                        Map.enemeyArray[x, y - 1] = Map.enemeyArray[x, y];
+                        Map.enemeyArray[x, y] = null;
+                    }
+                    
+                }
+                if (y < Map.Hero.Y_coordinate)
+                {
+                    if (Map.enemeyArray[x, y] != null)
+                    {
+                        Map.enemeyArray[x, y].Move(Charchter.Movement.Right);
+                        Map.enemeyArray[x, y + 1] = Map.enemeyArray[x, y];
+                        Map.enemeyArray[x, y] = null;
+
+                    }
+                   
+                }
             }
+            
         }
 
         private void getitem()
@@ -351,6 +402,7 @@ namespace TAsk1_v._2
                             Map.enemeyArray[i, o].Attack(Map.Hero);
                         }
                     }
+                    
                 }
             }
         }

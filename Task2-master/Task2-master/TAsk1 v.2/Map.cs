@@ -225,14 +225,16 @@ namespace TAsk1_v._2
             int enemeyrandom = RandomNumber(0,3);
             int rndX = RandomNumber(MinWidth_X1+1, MaxWidth_X1-1);
             int rndY = RandomNumber(MinHeight_Y1+1, MaxHeight_Y1-1);
-            while(rndX == 0)
+            
+            while (rndX == 0)
             {
-                 rndX = RandomNumber(MinWidth_X1, MaxWidth_X1);
+                rndX = RandomNumber(MinWidth_X1, MaxWidth_X1);
             }
-            while(rndY == 0)
+            while (rndY == 0)
             {
                 rndY = RandomNumber(MinHeight_Y1, MaxHeight_Y1);
             }
+
 
             if (type == Tile.TileType.HERO)
             {
@@ -243,6 +245,7 @@ namespace TAsk1_v._2
             }
             else if (type == Tile.TileType.ENEMY)
             {
+               
                 if(enemeyrandom == 0)
                 {
                     while (rndX > MaxWidth_X1)
