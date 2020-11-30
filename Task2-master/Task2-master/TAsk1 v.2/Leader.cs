@@ -8,10 +8,11 @@ namespace TAsk1_v._2
 {
     class Leader : Enemey
     {
-        public Leader(int x_coordinate, int y_coordinate, int enemyDamage, string symbol, int startingHP) : base(x_coordinate, y_coordinate, enemyDamage, symbol, startingHP)
+        public Leader(int x_coordinate, int y_coordinate) : base(x_coordinate, y_coordinate,2," L", 20)
         {
             this.HP = 20;
             this.Damage = 2;
+            
 
 
         }
