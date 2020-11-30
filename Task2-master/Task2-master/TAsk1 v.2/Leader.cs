@@ -15,7 +15,7 @@ namespace TAsk1_v._2
             this.HP = 20;
             this.Damage = 2;
             this.gold = 2;
-
+            Weapon = new Melee_weapon(this.x_coordinate, this.y_coordinate, 'S', Melee_weapon.Type.Longsword);
 
         }
 
@@ -25,7 +25,7 @@ namespace TAsk1_v._2
         }
         public override string ToString()
         {
-            return "leader[" + X_coordinate + "," + Y_coordinate + "]" + "Dmg:" + base.damage + "HP:" + this.HP;
+            return "Equipped: leader at [" + X_coordinate + "," + Y_coordinate + "]"+ "HP:" + this.HP +"with("+Weapon.Durability+"DURx"+Weapon.Damage+"DMG)";
         }
     }
 }

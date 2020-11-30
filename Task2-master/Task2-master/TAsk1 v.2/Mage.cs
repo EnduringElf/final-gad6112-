@@ -33,7 +33,7 @@ namespace TAsk1_v._2
         }
         public override string ToString()
         {
-            return "Mage[" + X_coordinate + "," + Y_coordinate + "]" + "Dmg:" + base.damage + "HP:" + this.HP;
+            return "barehanded: Mage at [" + X_coordinate + "," + Y_coordinate + "]" + "HP:" + this.HP+ "(5 DMG)";
         }
     }
 }

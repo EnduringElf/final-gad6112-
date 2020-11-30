@@ -44,7 +44,7 @@
             // 
             this.Map_label.AutoSize = true;
             this.Map_label.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Map_label.Location = new System.Drawing.Point(268, 9);
+            this.Map_label.Location = new System.Drawing.Point(356, 11);
             this.Map_label.Name = "Map_label";
             this.Map_label.Size = new System.Drawing.Size(68, 18);
             this.Map_label.TabIndex = 0;
@@ -75,7 +75,7 @@
             this.Enemeys_textbox.Location = new System.Drawing.Point(12, 214);
             this.Enemeys_textbox.Name = "Enemeys_textbox";
             this.Enemeys_textbox.ReadOnly = true;
-            this.Enemeys_textbox.Size = new System.Drawing.Size(220, 261);
+            this.Enemeys_textbox.Size = new System.Drawing.Size(288, 261);
             this.Enemeys_textbox.TabIndex = 3;
             this.Enemeys_textbox.Text = "";
             this.Enemeys_textbox.TextChanged += new System.EventHandler(this.Enemeys_textbox_TextChanged);
@@ -116,7 +116,7 @@
             this.shopinventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.shopinventory.FormattingEnabled = true;
             this.shopinventory.ItemHeight = 20;
-            this.shopinventory.Location = new System.Drawing.Point(1167, 4);
+            this.shopinventory.Location = new System.Drawing.Point(1233, 6);
             this.shopinventory.Name = "shopinventory";
             this.shopinventory.Size = new System.Drawing.Size(383, 28);
             this.shopinventory.TabIndex = 7;
@@ -125,7 +125,7 @@
             // debugbox
             // 
             this.debugbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.debugbox.Location = new System.Drawing.Point(1167, 177);
+            this.debugbox.Location = new System.Drawing.Point(1233, 177);
             this.debugbox.Name = "debugbox";
             this.debugbox.Size = new System.Drawing.Size(383, 374);
             this.debugbox.TabIndex = 8;
@@ -133,7 +133,7 @@
             // 
             // Buy_button
             // 
-            this.Buy_button.Location = new System.Drawing.Point(1167, 138);
+            this.Buy_button.Location = new System.Drawing.Point(1233, 138);
             this.Buy_button.Name = "Buy_button";
             this.Buy_button.Size = new System.Drawing.Size(94, 33);
             this.Buy_button.TabIndex = 9;
@@ -146,7 +146,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1562, 563);
+            this.ClientSize = new System.Drawing.Size(1628, 563);
             this.Controls.Add(this.Buy_button);
             this.Controls.Add(this.debugbox);
             this.Controls.Add(this.shopinventory);

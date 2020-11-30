@@ -9,6 +9,7 @@ namespace TAsk1_v._2
     [Serializable]
     class Goblin : Enemey
     {
+        
         public Goblin(int x_coordinate, int y_coordinate) : base(x_coordinate, y_coordinate, 1, " G", 10)
         {
             X_coordinate = x_coordinate;
@@ -26,7 +27,7 @@ namespace TAsk1_v._2
         }
         public  override string ToString()
         {
-            return "Goblin[" + X_coordinate + "," + Y_coordinate + "]" +"Dmg:"+ base.damage +"HP:"+ this.HP;
+            return "Equipped: Goblin at [" + X_coordinate + "," + Y_coordinate + "]"+"HP:"+ this.HP +"with Dagger("+Weapon.Durability+"DURx"+Weapon.Damage+"DMG)";
         }
         
     }
