@@ -37,7 +37,7 @@ namespace TAsk1_v._2
         
         public override string ToString()
         {
-            return " W";
+            return "MW";
         }
 
     }
