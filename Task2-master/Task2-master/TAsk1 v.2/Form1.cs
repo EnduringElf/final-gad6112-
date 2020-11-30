@@ -38,7 +38,7 @@ namespace TAsk1_v._2
             shopinventory.Items.Add(Map.shop.Weaponarray[2].ToString());
             Map.shop.Buyer = Map.Hero;
             Buy_button.Enabled = false;
-            Map.Hero.weapon = new Melee_weapon(Map.Hero.X_coordinate, Map.Hero.Y_coordinate, 'S', Melee_weapon.Type.Longsword);
+            //Map.Hero.weapon = Map.shop.Weaponarray[0];
             
             
 
@@ -589,7 +589,22 @@ namespace TAsk1_v._2
 
         private void Buy_button_Click(object sender, EventArgs e)
         {
-
+            if (shopinventory.SelectedIndex == 0)
+            {
+                Map.Hero.weapon = Map.shop.Weaponarray[0];
+                Map.Hero.Gold -= Map.shop.Weaponarray[0].Cost;
+            }else if (shopinventory.SelectedIndex == 1)
+            {
+                Map.Hero.weapon = Map.shop.Weaponarray[1];
+                Map.Hero.Gold -= Map.shop.Weaponarray[1].Cost;
+            }
+            else if (shopinventory.SelectedIndex == 2)
+            {
+                Map.Hero.weapon = Map.shop.Weaponarray[2];
+                Map.Hero.Gold -= Map.shop.Weaponarray[2].Cost;
+            }
+            Map.drawmap(Map_label,LAbel_hero);
+            Buy_button.Enabled = false;
         }
     }
 }
