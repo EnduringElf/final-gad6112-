@@ -33,9 +33,8 @@ namespace TAsk1_v._2
             GamEngine GM = new GamEngine(Map);
             Maparray = Map.maparray;
             Map.drawmap(Map_label,LAbel_hero);
-            shopinventory.Items.Add(Map.shop.Weaponarray[0].ToString());
-            shopinventory.Items.Add(Map.shop.Weaponarray[1].ToString());
-            shopinventory.Items.Add(Map.shop.Weaponarray[2].ToString());
+            loadshopitems();
+            
             Map.shop.Buyer = Map.Hero;
             Buy_button.Enabled = false;
             //Map.Hero.weapon = Map.shop.Weaponarray[0];
@@ -45,6 +44,12 @@ namespace TAsk1_v._2
 
         }
 
+        private void loadshopitems()
+        {
+            shopinventory.Items.Add(Map.shop.Weaponarray[0].ToString());
+            shopinventory.Items.Add(Map.shop.Weaponarray[1].ToString());
+            shopinventory.Items.Add(Map.shop.Weaponarray[2].ToString());
+        }
 
         private new void Move(Keys keys)
         {
@@ -160,7 +165,21 @@ namespace TAsk1_v._2
                     Buy_button.Enabled = true;
                 }
             }
-            
+            if (shopinventory.SelectedIndex == 1)
+            {
+                if (Map.Hero.Gold >= Map.shop.Weaponarray[1].Cost)
+                {
+                    Buy_button.Enabled = true;
+                }
+            }
+            if (shopinventory.SelectedIndex == 2)
+            {
+                if (Map.Hero.Gold >= Map.shop.Weaponarray[2].Cost)
+                {
+                    Buy_button.Enabled = true;
+                }
+            }
+
         }
 
         private void moveenemeies()
@@ -593,18 +612,42 @@ namespace TAsk1_v._2
             {
                 Map.Hero.weapon = Map.shop.Weaponarray[0];
                 Map.Hero.Gold -= Map.shop.Weaponarray[0].Cost;
+                
+                Map.shop.newitem(0);
+                
+                shopreload();
+                
+                
+                
             }else if (shopinventory.SelectedIndex == 1)
             {
                 Map.Hero.weapon = Map.shop.Weaponarray[1];
                 Map.Hero.Gold -= Map.shop.Weaponarray[1].Cost;
+                //shopinventory.Items.RemoveAt(1);
+                Map.shop.newitem(1);
+                shopreload();
+
             }
             else if (shopinventory.SelectedIndex == 2)
             {
                 Map.Hero.weapon = Map.shop.Weaponarray[2];
                 Map.Hero.Gold -= Map.shop.Weaponarray[2].Cost;
+                //shopinventory.Items.RemoveAt(2);
+                Map.shop.newitem(2);
+                shopreload();
+
             }
             Map.drawmap(Map_label,LAbel_hero);
             Buy_button.Enabled = false;
+        }
+
+        private void shopreload()
+        {
+            shopinventory.Items.Clear();
+
+            shopinventory.Items.Add(Map.shop.Weaponarray[0].ToString());
+            shopinventory.Items.Add(Map.shop.Weaponarray[1].ToString());
+            shopinventory.Items.Add(Map.shop.Weaponarray[2].ToString());
         }
     }
 }

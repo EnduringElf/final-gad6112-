@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,7 +25,28 @@ namespace TAsk1_v._2
 
 
         }
+        
+        public void newitem(int i)
+        {
+            int weapon = random.Next(0, 3);
+            if (weapon == 0)
+            {
+                Weaponarray[i] = new Melee_weapon(500, 500, 'D', Melee_weapon.Type.Dagger);
+            }
+            else if (weapon == 1)
+            {
+                Weaponarray[i] = new Melee_weapon(500, 500, 'L', Melee_weapon.Type.Longsword);
+            }
+            else if (weapon == 2)
+            {
+                Weaponarray[i] = new Ranged_weapon(500, 500, 'R', Ranged_weapon.Type.Rifle);
+            }
+            else
+            {
+                Weaponarray[i] = new Ranged_weapon(500, 500, 'B', Ranged_weapon.Type.Longbow);
+            }
 
+        }
         private void Random_weapon(int arrayorder)
         {
             int weapon = random.Next(0,3);
