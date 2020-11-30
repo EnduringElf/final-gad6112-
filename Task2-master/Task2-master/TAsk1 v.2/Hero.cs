@@ -26,7 +26,7 @@ namespace TAsk1_v._2
 
         public override string ToString()
         {
-            return "player stats:\n"+"HP:"+HP+"/"+MaxHP+"\nDamage: 2"+"\n["+X_coordinate+","+Y_coordinate+"]\n"+"Gold:"+this.gold;
+            return "player stats:\n"+"HP:"+HP+"/"+MaxHP+"\nDamage: 2"+"\n["+X_coordinate+","+Y_coordinate+"]\n"+"Gold:"+this.gold+"\n Current weapon";
         }
     }
 }

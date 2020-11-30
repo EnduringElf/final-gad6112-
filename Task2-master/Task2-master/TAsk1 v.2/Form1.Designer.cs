@@ -35,6 +35,8 @@
             this.Attack_button = new System.Windows.Forms.Button();
             this.Save_button = new System.Windows.Forms.Button();
             this.Load_button = new System.Windows.Forms.Button();
+            this.shopinventory = new System.Windows.Forms.ComboBox();
+            this.debugbox = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // Map_label
@@ -107,12 +109,35 @@
             this.Load_button.UseVisualStyleBackColor = true;
             this.Load_button.Click += new System.EventHandler(this.Load_button_Click);
             // 
+            // shopinventory
+            // 
+            this.shopinventory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.shopinventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.shopinventory.FormattingEnabled = true;
+            this.shopinventory.ItemHeight = 20;
+            this.shopinventory.Location = new System.Drawing.Point(1167, 4);
+            this.shopinventory.Name = "shopinventory";
+            this.shopinventory.Size = new System.Drawing.Size(383, 28);
+            this.shopinventory.TabIndex = 7;
+            this.shopinventory.SelectedIndexChanged += new System.EventHandler(this.shopinventory_SelectedIndexChanged);
+            // 
+            // debugbox
+            // 
+            this.debugbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.debugbox.Location = new System.Drawing.Point(1167, 177);
+            this.debugbox.Name = "debugbox";
+            this.debugbox.Size = new System.Drawing.Size(383, 374);
+            this.debugbox.TabIndex = 8;
+            this.debugbox.Text = "";
+            // 
             // Hero_label
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1562, 563);
+            this.Controls.Add(this.debugbox);
+            this.Controls.Add(this.shopinventory);
             this.Controls.Add(this.Load_button);
             this.Controls.Add(this.Save_button);
             this.Controls.Add(this.Attack_button);
@@ -136,6 +161,8 @@
         private System.Windows.Forms.Button Attack_button;
         private System.Windows.Forms.Button Save_button;
         private System.Windows.Forms.Button Load_button;
+        private System.Windows.Forms.ComboBox shopinventory;
+        private System.Windows.Forms.RichTextBox debugbox;
     }
 }
 

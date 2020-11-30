@@ -14,9 +14,9 @@ namespace TAsk1_v._2
 
         public Shop(int x_coordinate, int y_coordinate) : base(x_coordinate, y_coordinate)
         {
-            weaponarray = new weapon[2];
+            Weaponarray = new weapon[3];
             random = new Random();
-            for (int i = 0;i< 1; i++)
+            for (int i = 0;i< 3; i++)
             {
                 Random_weapon(i);
             }
@@ -30,30 +30,30 @@ namespace TAsk1_v._2
             int weapon = random.Next(0,3);
             if(weapon == 0)
             {
-                weaponarray[arrayorder]= new Melee_weapon(500, 500, 'D' , Melee_weapon.Type.Dagger);
+                Weaponarray[arrayorder]= new Melee_weapon(500, 500, 'D' , Melee_weapon.Type.Dagger);
             }else if (weapon == 1)
             {
-                weaponarray[arrayorder] = new Melee_weapon(500, 500, 'L', Melee_weapon.Type.Longsword);
+                Weaponarray[arrayorder] = new Melee_weapon(500, 500, 'L', Melee_weapon.Type.Longsword);
             }else if(weapon == 2)
             {
-                weaponarray[arrayorder] = new Ranged_weapon(500, 500, 'R', Ranged_weapon.Type.Rifle);
+                Weaponarray[arrayorder] = new Ranged_weapon(500, 500, 'R', Ranged_weapon.Type.Rifle);
             }
             else
             {
-                weaponarray[arrayorder] = new Ranged_weapon(500, 500, 'B', Ranged_weapon.Type.Longbow);
+                Weaponarray[arrayorder] = new Ranged_weapon(500, 500, 'B', Ranged_weapon.Type.Longbow);
             }
 
         }
         public bool CanBuy(int num)
         {
-            if (buyer.Gold >= weaponarray[0].Cost)
+            if (buyer.Gold >= Weaponarray[0].Cost)
             {
                 return true;
-            }else if (buyer.Gold >= weaponarray[1].Cost)
+            }else if (buyer.Gold >= Weaponarray[1].Cost)
             {
                 return true;
             }
-            else if(buyer.Gold >= weaponarray[2].Cost)
+            else if(buyer.Gold >= Weaponarray[2].Cost)
             {
                 return true;
             }
@@ -65,8 +65,15 @@ namespace TAsk1_v._2
 
 
         }
+        public void Buy(int num)
+        {
+            
+            
+        }
 
         internal Charchter Buyer { get => buyer; set => buyer = value; }
+        public weapon[] Weaponarray { get => weaponarray; set => weaponarray = value; }
+
         public override string ToString()
         {
             return " S";

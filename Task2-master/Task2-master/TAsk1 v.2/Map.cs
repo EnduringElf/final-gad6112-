@@ -15,6 +15,7 @@ namespace TAsk1_v._2
        
         Tile[,] mapArray;
         Hero hero;
+        public Shop shop;
         public Enemey[,] enemeyArray;
         public Item[,] itemarray;
         int MinWidth_X;
@@ -307,8 +308,9 @@ namespace TAsk1_v._2
                 {
                     rndY = RandomNumber(MinHeight_Y1, MaxHeight_Y1);
                 }
-                return mapArray[rndX, rndY] = new Shop(rndX, rndY);
-
+                shop = new Shop(rndX, rndY);
+                return mapArray[rndX, rndY] = shop;
+                
             }
             
             return null;

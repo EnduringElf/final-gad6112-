@@ -22,6 +22,7 @@ namespace TAsk1_v._2
                 Damage = 3;
                 Cost = 3;
                 Range = 1;
+                Discription = "\n" +weapon_type +" \n durability:" + Durability + "\n Damge:" + Damage + "\n price:" + Cost + "\n range" + Range;
             }else if (weapon_type == Type.Longsword)
             {
                 Weapon_type = "Longsword";
@@ -29,6 +30,7 @@ namespace TAsk1_v._2
                 Damage = 4;
                 Cost = 5;
                 Range = 1;
+                Discription = "\n"+weapon_type+" \n durability:" + Durability + "\n Damge:" + Damage + "\n price:" + Cost + "\n range" + Range;
             }
             
 

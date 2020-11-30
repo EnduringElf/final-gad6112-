@@ -32,11 +32,13 @@ namespace TAsk1_v._2
             GamEngine GM = new GamEngine(Map);
             Maparray = Map.maparray;
             Map.drawmap(Map_label,LAbel_hero);
+            shopinventory.Items.Add(Map.shop.Weaponarray[0].Discription);
+            shopinventory.Items.Add(Map.shop.Weaponarray[1].Discription);
+            shopinventory.Items.Add(Map.shop.Weaponarray[2].Discription);
+            Map.shop.Buyer = Map.Hero;
+            
 
-            
-            
-            
-           
+
         }
 
 
@@ -61,6 +63,7 @@ namespace TAsk1_v._2
                         enemyattack();
                         getitem();
                         moveenemeies();
+                        showshopitemselected();
                        
                     }
                     break;
@@ -81,6 +84,7 @@ namespace TAsk1_v._2
                         enemyattack();
                         getitem();
                         moveenemeies();
+                        showshopitemselected();
                     }
                         
                     break;
@@ -101,6 +105,7 @@ namespace TAsk1_v._2
                         enemyattack();
                         getitem();
                         moveenemeies();
+                        showshopitemselected();
                     }
                        
                     break;
@@ -121,6 +126,7 @@ namespace TAsk1_v._2
                         enemyattack();
                         getitem();
                         moveenemeies();
+                        showshopitemselected();
                     }
 
                         
@@ -132,6 +138,15 @@ namespace TAsk1_v._2
 
 
             
+            
+        }
+
+        private void showshopitemselected()
+        {
+            if (shopinventory.SelectedItem.ToString() != null)
+            {
+                debugbox.Text = shopinventory.SelectedItem.ToString();
+            }
             
         }
 
@@ -550,6 +565,13 @@ namespace TAsk1_v._2
 
 
             Map = mapfromfile;
+        }
+
+        private void shopinventory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            
+
         }
     }
 }

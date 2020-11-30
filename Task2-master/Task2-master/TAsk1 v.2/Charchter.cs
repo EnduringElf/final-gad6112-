@@ -11,7 +11,7 @@ namespace TAsk1_v._2
     abstract class Charchter : Tile
     {
         private Map map;
-
+        private weapon weapon;
         protected int gold;
         protected string symbol;
         protected int hP;
@@ -32,6 +32,7 @@ namespace TAsk1_v._2
         public int Damage { get => damage; set => damage = value; }
         public Map Map { get => map; set => map = value; }
         public int Gold { get => gold; set => gold = value; }
+        protected weapon Weapon { get => weapon; set => weapon = value; }
 
         public Charchter(int x_coordinate, int y_coordinate, int damage) : base(x_coordinate, y_coordinate)
         {
