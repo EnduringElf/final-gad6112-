@@ -21,7 +21,7 @@ namespace TAsk1_v._2
             symbol = Symbol;
         }
 
-        public int Damage { get => Damage; set => Damage = value; }
+        public int Damage { get => damage; set => damage = value; }
         
         public int Durability { get => durability; set => durability = value; }
         public int Cost { get => cost; set => cost = value; }

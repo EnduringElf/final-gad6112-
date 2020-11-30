@@ -284,20 +284,17 @@ namespace TAsk1_v._2
 
             }else if (type == Tile.TileType.SHOP)
             {
-                while ((mapArray[rndX,rndY] == null) && (enemeyArray[rndX,rndY] == null) && (itemarray[rndX,rndY] == null))
+
+                while (rndX > MaxWidth_X1 && rndX != hero.X_coordinate)
                 {
-                    while (rndX > MaxWidth_X1 && rndX != hero.X_coordinate)
-                    {
-                        rndX = RandomNumber(MinWidth_X1, MaxWidth_X1);
-                    }
-                    while (rndY > MaxHeight_Y1 && rndY != hero.Y_coordinate)
-                    {
-                        rndY = RandomNumber(MinHeight_Y1, MaxHeight_Y1);
-                    }
-                    return mapArray[rndX, rndY] = new Shop(rndX, rndY);
+                    rndX = RandomNumber(MinWidth_X1, MaxWidth_X1);
                 }
-                
-                
+                while (rndY > MaxHeight_Y1 && rndY != hero.Y_coordinate)
+                {
+                    rndY = RandomNumber(MinHeight_Y1, MaxHeight_Y1);
+                }
+                return mapArray[rndX, rndY] = new Shop(rndX, rndY);
+
             }
             
             return null;

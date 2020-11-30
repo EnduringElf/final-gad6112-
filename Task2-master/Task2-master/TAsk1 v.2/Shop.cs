@@ -16,7 +16,7 @@ namespace TAsk1_v._2
         {
             weaponarray = new weapon[2];
             random = new Random();
-            for (int i = 0;i< weaponarray.Length; i++)
+            for (int i = 0;i< 1; i++)
             {
                 Random_weapon(i);
             }
@@ -67,5 +67,9 @@ namespace TAsk1_v._2
         }
 
         internal Charchter Buyer { get => buyer; set => buyer = value; }
+        public override string ToString()
+        {
+            return " S";
+        }
     }
 }
