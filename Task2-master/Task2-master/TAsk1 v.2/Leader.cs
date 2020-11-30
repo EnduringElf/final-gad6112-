@@ -25,7 +25,7 @@ namespace TAsk1_v._2
         }
         public override string ToString()
         {
-            return " L";
+            return "leader[" + X_coordinate + "," + Y_coordinate + "]" + "Dmg:" + base.damage + "HP:" + this.HP;
         }
     }
 }

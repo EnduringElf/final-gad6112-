@@ -567,6 +567,7 @@ namespace TAsk1_v._2
             Map.Hero.Attack(Map.enemeyArray[currentenemyX,currentenemyY]);
             if(Map.enemeyArray[currentenemyX,currentenemyY].HP <= 0)
             {
+                Map.Hero.loot(Map.enemeyArray[currentenemyX, currentenemyY]);
                 Map.enemeyArray[currentenemyX, currentenemyY] = null;
             }
             Map.UpdateVision(Enemeys_textbox);

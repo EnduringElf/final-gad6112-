@@ -126,6 +126,10 @@ namespace TAsk1_v._2
             }
 
         }
+        public void loot(Charchter target)
+        {
+            this.gold += target.gold;
+        }
 
         public abstract Movement Returnmove(Movement move = 0);
         
