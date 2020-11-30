@@ -68,10 +68,12 @@
     <Compile Include="Item.cs" />
     <Compile Include="Mage.cs" />
     <Compile Include="Map.cs" />
+    <Compile Include="Melee_weapon.cs" />
     <Compile Include="Obstacle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tile.cs" />
+    <Compile Include="weapon.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
